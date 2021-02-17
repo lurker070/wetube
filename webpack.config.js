@@ -61,7 +61,8 @@ const config = {
           // both options are optional
           filename: 'styles.css'
         }),
-    ]
+    ],
+    devtool: 'cheap-module-source-map'
 };
 
 module.exports = config;
