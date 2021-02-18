@@ -64,7 +64,6 @@ export const getEditVideo = async(req,res) => {
     } = req;
     try{
         const video = await Video.findById(id);
-        console.log(video.creator, req.user.id);
         if(video.creator.toString() !== req.user.id){
             throw Error();
         } else {
@@ -144,4 +143,10 @@ export const postAddComment = async(req,res) => {
     } finally {
         res.end();
     }
+}
+
+// Delete Comment
+
+export const postDeleteComment = async (req,res) => {
+    console.log(req);
 }

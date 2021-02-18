@@ -34,4 +34,7 @@ block content
                 each comment in video.comments.reverse()
                     li
                         span=comment.text
-        
+                        if loggedUser && comment.creator === loggedUser.id
+                            button#jsDeleteComment
+                                i.fas.fa-eraser
+            
