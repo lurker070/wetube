@@ -47,10 +47,31 @@
       }
       .video__comments-list {
         margin-top: 50px;
-        li {
+        .video-commentor {
           display: flex;
           justify-content: space-between;
           background-color: #3498db;
+          color: white;
+          padding: 15px;
+          border-radius: 20px;
+          border-bottom-right-radius: 0px;
+          &:not(:last-child) {
+            margin-bottom: 15px;
+          }
+          span {
+            align-self: center;
+          }
+          button {
+            padding: 0px 0px;
+            width: 30px;
+            height: 30px;
+            font-size: 15px;
+          }
+        }
+        .not-video-commentor {
+          display: flex;
+          justify-content: space-between;
+          background-color: gray;
           color: white;
           padding: 15px;
           border-radius: 20px;

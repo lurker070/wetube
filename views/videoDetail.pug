@@ -32,9 +32,15 @@ block content
                 input(type="text", placeholder="Add a comment")
             ul.video__comments-list#jsCommentList
                 each comment in video.comments.reverse()
-                    li
-                        span=comment.text
-                        if loggedUser && comment.creator === loggedUser.id
-                            button#jsDeleteComment
-                                i.fas.fa-eraser
-            
+                    if video.creator.id === comment.creator
+                        li.video-commentor
+                            span=comment.text
+                            if loggedUser && comment.creator === loggedUser.id
+                                button#jsDeleteComment
+                                    i.fas.fa-eraser
+                    else
+                        li.not-video-commentor
+                            span=comment.text
+                            if loggedUser && comment.creator === loggedUser.id
+                                button#jsDeleteComment
+                                    i.fas.fa-eraser
